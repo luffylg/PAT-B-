@@ -10,12 +10,11 @@ public class solution_1002 {
 		
 		String[] py=new String[]{"ling","yi","er","san","si","wu","liu","qi","ba","jiu"};
 		Scanner in=new Scanner(System.in);
-		int n=in.nextInt();
+		String n=in.nextLine();
 		in.close();
 		int sum=0;
-		while(n>0){
-			sum+=n%10;
-			n/=10;
+		for (int i = 0; i < n.length(); i++) {
+			sum+=n.charAt(i)-'0';
 		}
 		String s=String.valueOf(sum);
 		for (int i = 0; i < s.length()-1; i++) {
