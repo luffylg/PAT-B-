@@ -13,17 +13,18 @@ public class solution_1007 {
 		for (int i = 3; i <= val; i+=2) {
 			if (!isSu(i)) {
 				flag=0;
-				continue;
+			}else {
+				if (flag==1) count++;
+				flag=1;
 			}
-			if (flag==1) count++;
-			flag=1;
 		}
 		System.out.println(count);
 	}
 
 	private static boolean isSu(int i) {
 		// TODO Auto-generated method stub
-		for (int j = 3; j <= i/2; j+=2) {
+		int ceil = (int) Math.ceil(Math.sqrt(i));
+		for (int j = 3; j <= ceil; j+=2) {
 			if (i%j==0) return false;
 		}
 		return true;
