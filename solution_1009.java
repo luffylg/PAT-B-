@@ -10,12 +10,11 @@ public class solution_1009 {
 		String line=in.nextLine();
 		in.close();
 		String[] split = line.split(" ");
-		//以多个空格分隔line.split(//s+)
+		//以多个空格分隔line.split("\\s+")
 		System.out.print(split[split.length-1]);
 		for (int i = split.length-2; i >=0; i--) {
 			System.out.print(" "+split[i]);
 		}
-		
 	}
 
 }
