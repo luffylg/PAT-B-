@@ -29,7 +29,7 @@ public class solution_1014 {
 						count2=1;
 						s1=a;
 					}
-				}else{
+				}else if((a-'0'>=0&&a-'0'<=9)||(a>'A'&&a<'Z')){
 					s2=a;
 					break;
 				}
