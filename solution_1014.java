@@ -1,6 +1,7 @@
 package patb_java;
 
 import java.util.Scanner;
+import java.util.concurrent.CountDownLatch;
 
 public class solution_1014 {
 
@@ -17,43 +18,45 @@ public class solution_1014 {
 		char s2='a';
 		int start1=0;
 		int start2=0;
-		for (int i = 0; i < aString.length(); i++) {
+		int count=0;
+		int count2=0;
+		for (int i = 0; i < Math.min(aString.length(), bString.length()); i++) {
 			char a=aString.charAt(i);
-			
-			if (a-'A'>26 || a-'A'<0) {
-				continue;
-			}
-			for (int j = 0; j < bString.length(); j++) {
-				char b=bString.charAt(j);
-				if (a==b) {
-					s1 = a;
-					start2=j+1;
-					break;
-				}
-			}
-			if (start2!=0) {
-				start1=i+1;
-				break;
-			}
-		}
-		System.out.print(weekday[s1-'A']+" ");
-		for (int i = start1; i < aString.length(); i++) {
-			char a=aString.charAt(i);
-			if (a-'A'>26 || a-'A'<0) {
-				continue;
-			}
-			for (int j = start2; j < bString.length(); j++) {
-				char b=bString.charAt(j);
-				if (a==b) {
+			char b=bString.charAt(i);
+			if (a==b) {
+				if (count2==0) {
+					if (a-'Z'<=0 && a-'A'>=0) {
+						count2=1;
+						s1=a;
+					}
+				}else{
 					s2=a;
 					break;
 				}
 			}
-			if (s2!='a') {
-				break;
+		}
+		System.out.print(weekday[s1-'A']+" ");
+		if (s2-'N'<=0 && s2-'A'>=0) {
+			System.out.print(s2-'A'+10);
+		}else {
+			System.out.print(0);
+			System.out.print(s2-'0');
+		}
+		int ps=0;
+		for (int i = 0; i < Math.min(cString.length(), dString.length()); i++) {
+			char c=cString.charAt(i);
+			char d=dString.charAt(i);
+			if ((c>'a'&&c<'z')||(c>'A'&&c<'Z')) {
+				if (c==d) {
+					ps=i;
+				}
 			}
 		}
-		System.out.print(s2-'A'+10);
+		if (ps<10) {
+			System.out.print(":0"+ps);
+		}else {
+			System.out.print(":"+ps);
+		}
 		
 	}
 
