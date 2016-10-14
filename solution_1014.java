@@ -16,20 +16,17 @@ public class solution_1014 {
 		String[] weekday=new String[]{"MON","TUE","WED","THU","FRI","SAT","SUN"};
 		char s1 ='a';
 		char s2='a';
-		int start1=0;
-		int start2=0;
-		int count=0;
 		int count2=0;
 		for (int i = 0; i < Math.min(aString.length(), bString.length()); i++) {
 			char a=aString.charAt(i);
 			char b=bString.charAt(i);
 			if (a==b) {
 				if (count2==0) {
-					if (a-'Z'<=0 && a-'A'>=0) {
+					if (a-'G'<=0 && a-'A'>=0) {
 						count2=1;
 						s1=a;
 					}
-				}else if((a-'0'>=0&&a-'0'<=9)||(a>'A'&&a<'Z')){
+				}else if((a-'0'>=0&&a-'0'<=9)||(a-'A'>=0&&a-'N'<=0)){
 					s2=a;
 					break;
 				}
@@ -46,7 +43,7 @@ public class solution_1014 {
 		for (int i = 0; i < Math.min(cString.length(), dString.length()); i++) {
 			char c=cString.charAt(i);
 			char d=dString.charAt(i);
-			if ((c>'a'&&c<'z')||(c>'A'&&c<'Z')) {
+			if ((c>='a'&&c<='z')||(c>='A'&&c<='Z')) {
 				if (c==d) {
 					ps=i;
 				}
