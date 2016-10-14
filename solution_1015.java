@@ -32,10 +32,10 @@ public class solution_1015 {
 			list.add(new person(num, de, cai, dengji));
 		}
 		in.close();
-		Collections.sort(list);
-		Collections.reverse(list);
-		System.out.println(list.size());
 		if (list.size()!=0) {
+			Collections.sort(list);
+			Collections.reverse(list);
+			System.out.println(list.size());
 			for (person person : list) {
 				System.out.println(String.valueOf(person.num)+" "+String.valueOf(person.de)+" "+String.valueOf(person.cai));
 			}
@@ -56,8 +56,9 @@ public class solution_1015 {
 		public int compareTo(person o) {
 			// TODO Auto-generated method stub
 			if (this.dengji==o.dengji) {
-				if (this.cai+this.de!=o.cai+o.de) {
-					return this.cai+this.de-o.cai-o.de;
+				int val=this.cai+this.de-o.cai-o.de;
+				if (val!=0) {
+					return val;
 				}else {
 					if (this.de==o.de) {
 						return o.num-this.num;
