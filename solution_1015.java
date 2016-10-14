@@ -32,10 +32,10 @@ public class solution_1015 {
 			list.add(new person(num, de, cai, dengji));
 		}
 		in.close();
+		System.out.println(list.size());
 		if (list.size()!=0) {
 			Collections.sort(list);
 			Collections.reverse(list);
-			System.out.println(list.size());
 			for (person person : list) {
 				System.out.println(String.valueOf(person.num)+" "+String.valueOf(person.de)+" "+String.valueOf(person.cai));
 			}
