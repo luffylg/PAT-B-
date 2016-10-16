@@ -10,11 +10,11 @@ public class solution_1018 {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in);
 		int num=in.nextInt();
-		HashMap<String, Integer> mapjia = new HashMap<>();
+		HashMap<String, Integer> mapjia = new HashMap<String, Integer>();
 		mapjia.put("C", 0);
 		mapjia.put("J", 0);
 		mapjia.put("B", 0);
-		HashMap<String, Integer> mapyi = new HashMap<>();
+		HashMap<String, Integer> mapyi = new HashMap<>(String, Integer);
 		mapyi.put("C", 0);
 		mapyi.put("J", 0);
 		mapyi.put("B", 0);
