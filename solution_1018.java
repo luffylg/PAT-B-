@@ -14,7 +14,7 @@ public class solution_1018 {
 		mapjia.put("C", 0);
 		mapjia.put("J", 0);
 		mapjia.put("B", 0);
-		HashMap<String, Integer> mapyi = new HashMap<>(String, Integer);
+		HashMap<String, Integer> mapyi = new HashMap<String, Integer>();
 		mapyi.put("C", 0);
 		mapyi.put("J", 0);
 		mapyi.put("B", 0);
