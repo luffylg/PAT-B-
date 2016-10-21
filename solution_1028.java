@@ -12,20 +12,27 @@ public class solution_1028 {
 		// TODO Auto-generated method stub
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int sum=Integer.valueOf(reader.readLine());
-		ArrayList<person> list = new ArrayList<person>();
+		int count=0;
 		person young=new person("", "2014/09/06");
 		person old=new person("", "1814/09/06");
+		person lao=new person("", "2014/09/06");
+		person nianq=new person("", "1814/09/06");
 		for (int i = 0; i < sum; i++) {
 			String[] split=reader.readLine().split(" ");
 			person p=new person(split[0], split[1]);
 			if (p.compareTo(young)>=0&&p.compareTo(old)<=0) {
-				list.add(p);
+				lao=p.compareTo(lao)>0?p:lao;
+				nianq=p.compareTo(nianq)<0?p:nianq;
+				count++;
 			}
 			
 		}
 		reader.close();
-		Collections.sort(list);
-		System.out.println(list.size()+" "+list.get(list.size()-1).name+" "+list.get(0).name);
+		if (count==0) {
+			System.out.println(0);
+		}else {
+			System.out.println(count+" "+lao.name+" "+nianq.name);
+		}
 	}
 	private static class person implements Comparable<person>{
 		String name;
