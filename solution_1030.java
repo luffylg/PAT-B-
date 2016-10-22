@@ -4,23 +4,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class solution_1030 {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args){
 		// TODO Auto-generated method stub
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		String line1 = reader.readLine();
-		String[] split1 = line1.split(" ");
-		String line2 = reader.readLine();
-		String[] split2 = line2.split(" ");
-		reader.close();
-		int N=Integer.valueOf(split1[0]);
-		long p=Integer.valueOf(split1[1]);
+		Scanner scanner = new Scanner(System.in);
+		int N=scanner.nextInt();
+		long p=scanner.nextLong();
 		long[] res=new long[N];
 		for (int i = 0; i < N; i++) {
-			res[i]=Integer.parseInt(split2[i]);
+			res[i]=scanner.nextLong();
 		}
+		scanner.close();
 		Arrays.sort(res);
 		int max=0;
 		int flag=0;
