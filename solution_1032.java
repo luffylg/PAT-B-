@@ -11,18 +11,15 @@ public class solution_1032 {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int row=Integer.valueOf(reader.readLine());
 		int[] rs=new int[row];
-		int count=row;
+		int r=0;
+		int max=0;
 		for (int i = 0; i < row; i++) {
 			String read=reader.readLine();
 			String[] split=read.split(" ");
 			rs[Integer.valueOf(split[0])-1]+=Integer.valueOf(split[1]);
-		}
-		int max=0;
-		int r=0;
-		for (int i = 0; i < rs.length; i++) {
-			if (rs[i]>max) {
-				max=rs[i];
-				r=i+1;
+			if (max<rs[Integer.valueOf(split[0])-1]) {
+				max=rs[Integer.valueOf(split[0])-1];
+				r=Integer.valueOf(split[0]);
 			}
 		}
 		reader.close();
