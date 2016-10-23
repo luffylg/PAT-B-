@@ -12,22 +12,17 @@ public class solution_1033 {
 		String broken=reader.readLine();
 		String input=reader.readLine();
 		reader.close();
-		if (broken.indexOf('+')!=-1) {
-			for (int i = 0; i < input.length(); i++) {
-				char ch=input.charAt(i);
-				if ((ch<'A'||ch>'Z')&&broken.toLowerCase().indexOf(ch)==-1) {
-					System.out.print(ch);
-				}
-			}
-		}else {
-			for (int i = 0; i < input.length(); i++) {
-				char ch=input.charAt(i);
-				if (broken.toLowerCase().indexOf(String.valueOf(ch).toLowerCase())==-1) {
-					System.out.print(ch);
-				}
-			}
+		for (int i = 0; i < broken.length(); i++) {
+			char ch=broken.charAt(i);
+			if (ch=='+') {
+				input=input.replaceAll("[A-Z]", "");
+				input=input.replace(String.valueOf(ch), "");
+			}else {
+				input=input.replace(String.valueOf(ch).toLowerCase(), "");
+				input=input.replace(String.valueOf(ch).toUpperCase(), "");
+			}			
 		}
-		
+		System.out.println(input);
 	}
 
 }
