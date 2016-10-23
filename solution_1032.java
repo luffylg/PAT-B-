@@ -3,6 +3,8 @@ package patb;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class solution_1032 {
 
@@ -10,19 +12,27 @@ public class solution_1032 {
 		// TODO Auto-generated method stub
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int row=Integer.valueOf(reader.readLine());
-		int[] rs=new int[row];
-		int r=0;
+		String r="";
 		int max=0;
+		HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
 		for (int i = 0; i < row; i++) {
 			String read=reader.readLine();
 			String[] split=read.split(" ");
-			rs[Integer.valueOf(split[0])-1]+=Integer.valueOf(split[1]);
-			if (max<rs[Integer.valueOf(split[0])-1]) {
-				max=rs[Integer.valueOf(split[0])-1];
-				r=Integer.valueOf(split[0]);
+			String key=split[0];
+			int value=Integer.valueOf(split[1]);
+			if (hashMap.containsKey(key)) {
+				hashMap.put(key, hashMap.get(key)+value);
+			}else {
+				hashMap.put(key, value);
 			}
 		}
 		reader.close();
+		for (Entry<String, Integer> entry : hashMap.entrySet()) {
+			if (entry.getValue()>max) {
+				max=entry.getValue();
+				r=entry.getKey();
+			}
+		}
 		System.out.println(r+" "+max);
 	}
 
