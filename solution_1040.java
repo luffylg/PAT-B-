@@ -11,56 +11,27 @@ public class solution_1040 {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		String S=bufferedReader.readLine();
 		bufferedReader.close();
-		int i=0;
 		long sum=0;
-		while (i<S.length()) {
-			int countp=0;
-			int counta=0;
-			int countt=0;
-			char c=S.charAt(i);
-			if (c!='P') {			
-				i++;
-				continue;
+		int mod=1000000007;
+		int t=0;
+		int p=0;
+		for (int i = 0; i < S.length(); i++) {
+			char ch=S.charAt(i);
+			if (ch=='T') {
+				t++;
 			}
-			countp=1;
-			
-			int j=i+1;
-			while (j<S.length()) {
-				char c2=S.charAt(j);
-				if (c2=='A') {
-					counta=1;
-					break;
-				}
-				if (c2=='P') {
-					countp++;
-				}
-				j++;
-			}			
-			int k=j+1;
-			while (k<S.length()) {
-				char c3=S.charAt(k);
-				if (c3=='T') {
-					countt=1;
-					break;
-				}
-				if (c3=='A') {
-					counta++;
-				}
-				k++;
-			}			
-			for (int l = k+1; l < S.length(); l++) {
-				char c4=S.charAt(l);
-				if (c4=='T') {
-					countt++;
-				}
+		}
+		for (int i = 0; i < S.length(); i++) {
+			char ch=S.charAt(i);
+			if (ch=='P') {
+				p++;
 			}
-			if (countp==0||counta==0||countt==0) {
-				break;
+			if (ch=='T') {
+				t--;
 			}
-			sum+=(countp*counta*countt)%1000000007;
-			sum=sum%1000000007;
-			i=j+1;
-			
+			if (ch=='A') {
+				sum=(sum+p*t%mod)%mod;
+			}
 		}
 		
 		System.out.println(sum);
