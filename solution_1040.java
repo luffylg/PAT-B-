@@ -11,30 +11,24 @@ public class solution_1040 {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		String S=bufferedReader.readLine();
 		bufferedReader.close();
-		long sum=0;
 		int mod=1000000007;
 		int t=0;
-		int p=0;
-		for (int i = 0; i < S.length(); i++) {
+		int pat=0;
+		int at=0;
+		for (int i = S.length()-1; i >=0 ; i--) {
 			char ch=S.charAt(i);
 			if (ch=='T') {
 				t++;
 			}
-		}
-		for (int i = 0; i < S.length(); i++) {
-			char ch=S.charAt(i);
-			if (ch=='P') {
-				p++;
-			}
-			if (ch=='T') {
-				t--;
-			}
 			if (ch=='A') {
-				sum=(sum+p*t%mod)%mod;
+				at=(at+t)%mod;
+			}
+			if (ch=='P') {
+				pat=(pat+at)%mod;
 			}
 		}
 		
-		System.out.println(sum);
+		System.out.println(pat);
 	}
 	
 
