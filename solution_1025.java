@@ -59,9 +59,14 @@ public class solution_1025 {
 			System.out.println(list.get(0).address+" "+list.get(0).val+" "+list.get(K-1).nextaddress);
 			list.clear();
 		}
-		for (node node : list) {
-			System.out.println(node);
+		if (list.size()>0) {
+			for (int i = 0; i < list.size()-1; i++) {
+				node tm=list.get(i);
+				System.out.println(tm.address+" "+tm.val+" "+tm.nextaddress);
+			}
+			System.out.println(list.get(list.size()-1).address+" "+list.get(list.size()-1).val+" -1");
 		}
+		
 	}
 
 }
