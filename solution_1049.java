@@ -4,19 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class solution_1049 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		int N=Integer.valueOf(reader.readLine());
-		String[] split=reader.readLine().split(" ");
-		reader.close();
+		Scanner scanner=new Scanner(System.in);
+		int N=scanner.nextInt();
 		float[] fl=new float[N];
-		for (int i = 0; i < split.length; i++) {
-			fl[i]=Float.valueOf(split[i]);
+		for (int i = 0; i < N; i++) {
+			fl[i]=scanner.nextFloat();
 		}
+		scanner.close();
 		Arrays.sort(fl);
 		float sum=0;
 		for (int i = 0; i < fl.length; i++) {
