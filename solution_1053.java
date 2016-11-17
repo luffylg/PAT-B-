@@ -33,8 +33,8 @@ public class solution_1053 {
 			}
 		}
 		reader.close();
-		double may=(double)countmay/(double)N*100;
-		double kong=(double)countkong/(double)N*100;
+		float may=(float)countmay/N*100;
+		float kong=(float)countkong/N*100;
 		System.out.print(String.format("%.1f",may));
 		System.out.print("% ");
 		System.out.print(String.format("%.1f",kong));
