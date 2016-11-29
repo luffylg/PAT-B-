@@ -19,18 +19,9 @@ public class solution_1060 {
 		}
 		Arrays.sort(target);
 		int E=0;
-		int tag=target.length-1;
-		int count=0;
-		for (int j = Math.min(target.length,target[N-1]-1); j >=0; j--) {
-			for (int i = tag; i >=0; i--) {
-				if (target[i]<=j) {
-					tag=i;
-					break;
-				}
-				count++;
-			}
-			if (count>=j) {
-				E=j;
+		for (int i = 0; i < target.length; i++) {
+			if (target[i]>target.length-i) {
+				E=target.length-i;
 				break;
 			}
 		}
