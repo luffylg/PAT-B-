@@ -19,7 +19,7 @@ public class solution_1060 {
 		}
 		Arrays.sort(target);
 		int E=0;
-		for (int i = 0; i < target.length; i++) {
+		for (int i = target.length-Math.min(target.length, target[target.length-1]-1); i < target.length; i++) {
 			if (target[i]>target.length-i) {
 				E=target.length-i;
 				break;
