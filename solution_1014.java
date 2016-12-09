@@ -1,18 +1,20 @@
-package patb_java;
+package patb;
 
-import java.util.Scanner;
-import java.util.concurrent.CountDownLatch;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class solution_1014 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Scanner in = new Scanner(System.in);
-		String aString=in.nextLine();
-		String bString=in.nextLine();
-		String cString=in.nextLine();
-		String dString=in.nextLine();
-		in.close();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String aString=reader.readLine();
+		String bString=reader.readLine();
+		String cString=reader.readLine();
+		String dString=reader.readLine();
+		reader.close();
 		String[] weekday=new String[]{"MON","TUE","WED","THU","FRI","SAT","SUN"};
 		char s1 ='a';
 		char s2='a';
